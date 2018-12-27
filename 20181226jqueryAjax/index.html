@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jqueryでajax通信テスト</title>
+  <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <style>
+    .wrap {
+      margin-left: 40px;
+    }
+    dl {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 40px;
+      display: flex;
+    }
+    .sendWpper {
+      text-align: right;
+      width: 100%;
+      max-width: 640px;
+    }
+    dl > dt {
+      width: 130px;
+    }
+    dl > dd {
+      flex-grow: 1;
+    }
+    select {
+      font-size: 16px;
+      min-width: 300px;
+      border: #cacaca solid 1px;
+      height: 40px;
+    }
+    textarea {
+      font-size: 16px;
+      width: 100%;
+      padding: 10px;
+      border: #cacaca solid 1px;
+      border-radius: 4px;
+    }
+    input {
+      font-size: 16px;
+      width: 100%;
+      padding: 6px 4px;
+      border: #cacaca solid 1px;
+      border-radius: 4px;
+    }
+    button {
+      width: 300px;
+      font-size: 18px;
+      padding: 10px;
+      background-color: #cacaca;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>jqueryでajax通信テスト</h1>
+    <dl>
+      <dt>URL</dt>
+      <dd><input type="text" name="url"></dd>
+    </dl>
+    <dl>
+      <dt>HTTPメソッド</dt>
+      <dd>
+        <select name="method" id="method">
+          <option value="get">GET</option>
+          <option value="post">POST</option>
+        </select>
+      </dd>
+    </dl>
+    <dl>
+      <dt>DATA</dt>
+      <dd>
+        <textarea rows="10" cols="40" name="data"></textarea>
+      </dd>
+    </dl>
+    
+    <div class="sendWpper">
+        <button id="send">送信</button>
+        <p>結果はコンソールログを表示</p>
+    </div>
+  </div>
+  <script>
+  $('#send').click( function(){
+    var methodType = $('#method').val();
+    if( methodType === 'get' ){
+      get();
+    } else {
+      post();
+    }
+
+    function get() {
+      $.get(
+        $('[name="url"]').val(), 
+        function(data, textStatus, jqXHR) {
+          console.log(data);
+          console.log(textStatus);
+          console.log(jqXHR);
+      });
+    }
+
+    function post() {
+      $.ajax({
+          url: $('[name="url"]').val(),
+          type:"POST",
+          data: $('[name="data"]').val(),
+          contentType:"application/json; charset=utf-8",
+          dataType:"json",
+          success: function(data, textStatus, jqXHR){
+            console.log('data');
+            console.log(data);
+            console.log('textStatus');
+            console.log(textStatus);
+            console.log('jqXHR');
+            console.log(jqXHR);
+          }
+      });
+    }
+  });
+  
+  </script>
+</body>
+</html>
