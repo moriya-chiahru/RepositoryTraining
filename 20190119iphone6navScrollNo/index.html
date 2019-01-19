@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<style>
+.wrap {
+	position: relative;
+	overflow: hidden;
+}
+.nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: scroll;
+	text-align: right;
+	color: #fff;
+	background: rgba( 0, 0, 0, .7 );
+}
+.openBtn {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 999;
+}
+.closeBtn {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+</style>
+</head>
+<body>
+<button id="open" class="openBtn">表示</button>
+<div class="js-heightWpaer">
+<div class="nav">
+<button id="close" class="closeBtn">閉じる</button>
+<br>内容01</br>
+<br>内容02</br>
+<br>内容03</br>
+<br>内容04</br>
+<br>内容05</br>
+<br>内容06</br>
+<br>内容07</br>
+<br>内容08</br>
+<br>内容09</br>
+<br>内容10</br>
+<br>内容11</br>
+<br>内容12</br>
+<br>内容13</br>
+<br>内容14</br>
+<br>内容15</br>
+<br>内容16</br>
+<br>内容17</br>
+<br>内容18</br>
+<br>内容19</br>
+<br>内容20</br>
+<br>内容21</br>
+<br>内容22</br>
+<br>内容23</br>
+<br>内容24</br>
+<br>内容25</br>
+<br>内容26</br>
+<br>内容27</br>
+<br>内容28</br>
+<br>内容29</br>
+<br>内容30</br>
+<br>内容31</br>
+<br>内容32</br>
+<br>内容33</br>
+<br>内容34</br>
+<br>内容35</br>
+<br>内容36</br>
+<br>内容37</br>
+<br>内容38</br>
+<br>内容39</br>
+<br>内容40</br>
+<br>内容41</br>
+<br>内容42</br>
+<br>内容43</br>
+<br>内容44</br>
+<br>内容45</br>
+<br>内容46</br>
+<br>内容47</br>
+<br>内容48</br>
+<br>内容49</br>
+<br>内容50</br>
+<br>内容51</br>
+<br>内容52</br>
+<br>内容53</br>
+<br>内容54</br>
+<br>内容55</br>
+<br>内容56</br>
+<br>内容57</br>
+<br>内容58</br>
+<br>内容59</br>
+<br>内容60</br>
+</div>
+<div class="content">
+<br>01</br>
+<br>02</br>
+<br>03</br>
+<br>04</br>
+<br>05</br>
+<br>06</br>
+<br>07</br>
+<br>08</br>
+<br>09</br>
+<br>10</br>
+<br>11</br>
+<br>12</br>
+<br>13</br>
+<br>14</br>
+<br>15</br>
+<br>16</br>
+<br>17</br>
+<br>18</br>
+<br>19</br>
+<br>20</br>
+<br>21</br>
+<br>22</br>
+<br>23</br>
+<br>24</br>
+<br>25</br>
+<br>26</br>
+<br>27</br>
+<br>28</br>
+<br>29</br>
+<br>30</br>
+<br>31</br>
+<br>32</br>
+<br>33</br>
+<br>34</br>
+<br>35</br>
+<br>36</br>
+<br>37</br>
+<br>38</br>
+<br>39</br>
+<br>40</br>
+<br>41</br>
+<br>42</br>
+<br>43</br>
+<br>44</br>
+<br>45</br>
+<br>46</br>
+<br>47</br>
+<br>48</br>
+<br>49</br>
+<br>50</br>
+<br>51</br>
+<br>52</br>
+<br>53</br>
+<br>54</br>
+<br>55</br>
+<br>56</br>
+<br>57</br>
+<br>58</br>
+<br>59</br>
+<br>60</br>
+<br>61</br>
+<br>62</br>
+<br>63</br>
+<br>64</br>
+<br>65</br>
+<br>66</br>
+<br>67</br>
+<br>68</br>
+<br>69</br>
+<br>70</br>
+<br>71</br>
+<br>72</br>
+<br>73</br>
+<br>74</br>
+<br>75</br>
+<br>76</br>
+<br>77</br>
+<br>78</br>
+<br>79</br>
+<br>80</br>
+<br>81</br>
+<br>82</br>
+<br>83</br>
+<br>84</br>
+<br>85</br>
+<br>86</br>
+<br>87</br>
+<br>88</br>
+<br>89</br>
+<br>90</br>
+<br>91</br>
+<br>92</br>
+<br>93</br>
+<br>94</br>
+<br>95</br>
+<br>96</br>
+<br>97</br>
+<br>98</br>
+<br>99</br>
+<br>100</br>
+</div>
+</div>
+
+
+<script>
+var scrollPosition = 0;
+$('#open').click(function() {
+    // スクロール量を記憶
+    scrollPosition = $(window).scrollTop();
+    $('.nav').show(); // ナビ表示
+    $('.js-heightWpaer').addClass('wrap');
+    // wrapperに画面の高さを充てる
+    $('.js-heightWpaer').css('height', $(window).height() + 'px');
+    // スクロール量分コンテンツにマージンマイナスを入れる
+    $('.content').css('margin-top', ( scrollPosition * -1 ) + 'px');;
+});
+
+$('#close').click(function() {
+    // ナビ非表示
+    $('.nav').hide();
+    $('.js-heightWpaer').removeClass('wrap');
+    $('.js-heightWpaer').css('height', '');
+    $('.content').css('margin-top', '');
+    // スクロールを開いた場所に戻す
+    $(window).scrollTop(scrollPosition);
+});
+</script>
+</body>
+</html>
