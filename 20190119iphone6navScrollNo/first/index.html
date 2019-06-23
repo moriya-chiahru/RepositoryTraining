@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>スクロールできなくて、開いた位置を維持するサンプル01</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<style>
+.wrap {
+	position: relative;
+	overflow: hidden;
+}
+.nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: scroll;
+	text-align: right;
+	color: #fff;
+	background: rgba( 0, 0, 0, .7 );
+}
+.openBtn {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 999;
+	background-color: #fff;
+}
+.closeBtn {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="js-heightWpaer">
+<button id="open" class="openBtn">表示</button>
+<div class="nav">
+<button id="close" class="closeBtn">閉じる</button>
+内容01<br>内容02<br>内容03<br>内容04<br>内容05<br>内容06<br>内容07<br>内容08<br>内容09<br>内容10<br>内容11<br>内容12<br>内容13<br>内容14<br>内容15<br>内容16<br>内容17<br>内容18<br>内容19<br>内容20<br>内容21<br>内容22<br>内容23<br>内容24<br>内容25<br>内容26<br>内容27<br>内容28<br>内容29<br>内容30<br>内容31<br>内容32<br>内容33<br>内容34<br>内容35<br>内容36<br>内容37<br>内容38<br>内容39<br>内容40<br>内容41<br>内容42<br>内容43<br>内容44<br>内容45<br>内容46<br>内容47<br>内容48<br>内容49<br>内容50<br>内容51<br>内容52<br>内容53<br>内容54<br>内容55<br>内容56<br>内容57<br>内容58<br>内容59<br>内容60
+</div>
+<div class="content">
+<h2>スクロールできなくて、開いた位置を維持するサンプル</h2>
+文字のあたりスクロールできる01<br>文字のあたりスクロールできる02<br>文字のあたりスクロールできる03<br>文字のあたりスクロールできる04<br>文字のあたりスクロールできる05<br>文字のあたりスクロールできる06<br>文字のあたりスクロールできる07<br>文字のあたりスクロールできる08<br>文字のあたりスクロールできる09<br>文字のあたりスクロールできる10<br>文字のあたりスクロールできる11<br>文字のあたりスクロールできる12<br>文字のあたりスクロールできる13<br>文字のあたりスクロールできる14<br>文字のあたりスクロールできる15<br>文字のあたりスクロールできる16<br>文字のあたりスクロールできる17<br>文字のあたりスクロールできる18<br>文字のあたりスクロールできる19<br>文字のあたりスクロールできる20<br>文字のあたりスクロールできる21<br>文字のあたりスクロールできる22<br>文字のあたりスクロールできる23<br>文字のあたりスクロールできる24<br>文字のあたりスクロールできる25<br>文字のあたりスクロールできる26<br>文字のあたりスクロールできる27<br>文字のあたりスクロールできる28<br>文字のあたりスクロールできる29<br>文字のあたりスクロールできる30<br>文字のあたりスクロールできる31<br>文字のあたりスクロールできる32<br>文字のあたりスクロールできる33<br>文字のあたりスクロールできる34<br>文字のあたりスクロールできる35<br>文字のあたりスクロールできる36<br>文字のあたりスクロールできる37<br>文字のあたりスクロールできる38<br>文字のあたりスクロールできる39<br>文字のあたりスクロールできる40<br>文字のあたりスクロールできる41<br>文字のあたりスクロールできる42<br>文字のあたりスクロールできる43<br>文字のあたりスクロールできる44<br>文字のあたりスクロールできる45<br>文字のあたりスクロールできる46<br>文字のあたりスクロールできる47<br>文字のあたりスクロールできる48<br>文字のあたりスクロールできる49<br>文字のあたりスクロールできる50<br>文字のあたりスクロールできる51<br>文字のあたりスクロールできる52<br>文字のあたりスクロールできる53<br>文字のあたりスクロールできる54<br>文字のあたりスクロールできる55<br>文字のあたりスクロールできる56<br>文字のあたりスクロールできる57<br>文字のあたりスクロールできる58<br>文字のあたりスクロールできる59<br>文字のあたりスクロールできる60<br>文字のあたりスクロールできる61<br>文字のあたりスクロールできる62<br>文字のあたりスクロールできる63<br>文字のあたりスクロールできる64<br>文字のあたりスクロールできる65<br>文字のあたりスクロールできる66<br>文字のあたりスクロールできる67<br>文字のあたりスクロールできる68<br>文字のあたりスクロールできる69<br>文字のあたりスクロールできる70<br>文字のあたりスクロールできる71<br>文字のあたりスクロールできる72<br>文字のあたりスクロールできる73<br>文字のあたりスクロールできる74<br>文字のあたりスクロールできる75<br>文字のあたりスクロールできる76<br>文字のあたりスクロールできる77<br>文字のあたりスクロールできる78<br>文字のあたりスクロールできる79<br>文字のあたりスクロールできる80<br>文字のあたりスクロールできる81<br>文字のあたりスクロールできる82<br>文字のあたりスクロールできる83<br>文字のあたりスクロールできる84<br>文字のあたりスクロールできる85<br>文字のあたりスクロールできる86<br>文字のあたりスクロールできる87<br>文字のあたりスクロールできる88<br>文字のあたりスクロールできる89<br>文字のあたりスクロールできる90<br>文字のあたりスクロールできる91<br>文字のあたりスクロールできる92<br>文字のあたりスクロールできる93<br>文字のあたりスクロールできる94<br>文字のあたりスクロールできる95<br>文字のあたりスクロールできる96<br>文字のあたりスクロールできる97<br>文字のあたりスクロールできる98<br>文字のあたりスクロールできる99<br>文字のあたりスクロールできる100
+</div>
+</div>
+
+
+<script>
+var scrollPosition = 0;
+$('#open').click(function() {
+	// スクロール量を記憶
+	scrollPosition = $(window).scrollTop();
+	$('.nav').show(); // ナビ表示
+	$('.js-heightWpaer').addClass('wrap');
+	// wrapperに画面の高さを充てる
+	$('.js-heightWpaer').css('height', $(window).height() + 'px');
+	// スクロール量分コンテンツにマージンマイナスを入れる
+	$('.content').css('margin-top', ( scrollPosition * -1 ) + 'px');
+});
+
+$('#close').click(function() {
+	// ナビ非表示
+	$('.nav').hide();
+	$('.js-heightWpaer').removeClass('wrap');
+	$('.js-heightWpaer').css('height', '');
+	$('.content').css('margin-top', '');
+	// スクロールを開いた場所に戻す
+	$(window).scrollTop(scrollPosition);
+});
+</script>
+</body>
+</html>

@@ -2,17 +2,14 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>スクロールできなくて、開いた位置を維持するサンプル</title>
+	<title>スクロールできなくて、開いた位置を維持するサンプル02</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <style>
-.wrap {
-	position: relative;
-	overflow: hidden;
-}
 .nav {
 	display: none;
 	position: fixed;
+	z-index: 9999;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -57,20 +54,18 @@ var scrollPosition = 0;
 $('#open').click(function() {
 	// スクロール量を記憶
 	scrollPosition = $(window).scrollTop();
-	$('.nav').show(); // ナビ表示
-	$('.js-heightWpaer').addClass('wrap');
-	// wrapperに画面の高さを充てる
-	$('.js-heightWpaer').css('height', $(window).height() + 'px');
-	// スクロール量分コンテンツにマージンマイナスを入れる
-	$('.content').css('margin-top', ( scrollPosition * -1 ) + 'px');
+	// ナビ表示
+	$('.nav').show(); 
+	// コンテンツをfixd　＋　スクロール分上にもっていく
+	$('.content').css({'position':'fixed','top':-scrollPosition});
+
 });
 
 $('#close').click(function() {
 	// ナビ非表示
 	$('.nav').hide();
-	$('.js-heightWpaer').removeClass('wrap');
-	$('.js-heightWpaer').css('height', '');
-	$('.content').css('margin-top', '');
+	// コンテンツのcssをリセット
+	$('.content').css({'position':'static','top':'0'});
 	// スクロールを開いた場所に戻す
 	$(window).scrollTop(scrollPosition);
 });
